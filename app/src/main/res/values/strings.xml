@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">CzasReakcji</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_game">GameActivity</string>
+    <string name="title_activity_stats">StatsActivity</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+    <string name="title_activity_result">Result</string>
+    <string name="title_activity_reslt">ResltActivity</string>
+</resources>

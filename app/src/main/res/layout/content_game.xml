@@ -50,4 +50,16 @@
         android:textSize="24sp"
         tools:layout_editor_absoluteX="90dp"
         tools:layout_editor_absoluteY="205dp" />
+
+    <TextView
+        android:id="@+id/timer"
+        android:layout_width="match_parent"
+        android:layout_height="41dp"
+        android:layout_x="0dp"
+        android:layout_y="306dp"
+        android:text="0"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        tools:layout_editor_absoluteX="161dp"
+        tools:layout_editor_absoluteY="321dp" />
 </AbsoluteLayout>

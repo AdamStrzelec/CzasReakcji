@@ -29,4 +29,76 @@
         android:textSize="24sp"
         tools:layout_editor_absoluteX="185dp"
         tools:layout_editor_absoluteY="48dp" />
+
+    <TextView
+        android:id="@+id/average"
+        android:layout_width="308dp"
+        android:layout_height="38dp"
+        android:layout_x="46dp"
+        android:layout_y="111dp"
+        android:text="Średni czas odpowiedzi"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="167dp"
+        tools:layout_editor_absoluteY="99dp" />
+
+    <TextView
+        android:id="@+id/averageTime"
+        android:layout_width="304dp"
+        android:layout_height="41dp"
+        android:layout_x="50dp"
+        android:layout_y="153dp"
+        android:text="0"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="171dp"
+        tools:layout_editor_absoluteY="151dp" />
+
+    <TextView
+        android:id="@+id/slowest"
+        android:layout_width="308dp"
+        android:layout_height="64dp"
+        android:layout_x="50dp"
+        android:layout_y="232dp"
+        android:text="Najwolniejszy czas dpowiedzi"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="52dp"
+        tools:layout_editor_absoluteY="244dp" />
+
+    <TextView
+        android:id="@+id/slowestTime"
+        android:layout_width="304dp"
+        android:layout_height="43dp"
+        android:layout_x="52dp"
+        android:layout_y="299dp"
+        android:text="0"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="39dp"
+        tools:layout_editor_absoluteY="377dp" />
+
+    <TextView
+        android:id="@+id/fastest"
+        android:layout_width="300dp"
+        android:layout_height="62dp"
+        android:layout_x="56dp"
+        android:layout_y="380dp"
+        android:text="Najszybszy czas odpowiedzi"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="47dp"
+        tools:layout_editor_absoluteY="387dp" />
+
+    <TextView
+        android:id="@+id/fastestTime"
+        android:layout_width="293dp"
+        android:layout_height="51dp"
+        android:layout_x="58dp"
+        android:layout_y="449dp"
+        android:text="0"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="152dp"
+        tools:layout_editor_absoluteY="459dp" />
 </AbsoluteLayout>

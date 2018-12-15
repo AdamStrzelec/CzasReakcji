@@ -12,6 +12,9 @@ import android.widget.TextView;
 public class ResultActivity extends AppCompatActivity {
 
     private int correctAnswers;
+    private int average;
+    private int slowest;
+    private int fastest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,9 +23,21 @@ public class ResultActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         correctAnswers = intent.getIntExtra(GameActivity.CORRECT_ANSWERS_COUNT, 0);
+        average = intent.getIntExtra(GameActivity.AVERAGE_TIME, 0);
+        slowest = intent.getIntExtra(GameActivity.SLOWEST_ANSWER, 0);
+        fastest = intent.getIntExtra(GameActivity.FASTEST_ANSWER, 0);
 
         TextView correctCount = (TextView) findViewById(R.id.correctCount);
         correctCount.setText(""+correctAnswers);
+
+        TextView averageTime = (TextView) findViewById(R.id.averageTime);
+        averageTime.setText(""+average);
+
+        TextView slowestTime = (TextView) findViewById(R.id.slowestTime);
+        slowestTime.setText(""+slowest);
+
+        TextView fastestTime = (TextView) findViewById(R.id.fastestTime);
+        fastestTime.setText(""+fastest);
     }
 
 }

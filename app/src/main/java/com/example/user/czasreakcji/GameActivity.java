@@ -7,6 +7,7 @@ import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -18,12 +19,13 @@ public class GameActivity extends AppCompatActivity {
     private Button correctButon;
     private Button incorrectButon;
     private TextView colorName;
+    private ProgressBar progressBar;
     private Colors colors;
     private Random random;
     private int generatedColorName;
     private int generatedColorValue;
     private int points;
-
+    private boolean gameEnded = false;
     public int counter = 0;
 
     public List<Integer> counters = new ArrayList<>();
@@ -57,6 +59,8 @@ public class GameActivity extends AppCompatActivity {
                 checkAnswer(false);
             }
         });
+        progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        progressBar.setMax(100);
 
         colorName = (TextView) findViewById(R.id.colorName);
 
@@ -78,17 +82,23 @@ public class GameActivity extends AppCompatActivity {
         colorName.setTextColor(Color.rgb(colors.colorsTab[colorNr].getColorValueR(),colors.colorsTab[colorNr].getColorValueG(),colors.colorsTab[colorNr].getColorValueB()));
         //colorName.setTextColor(Color.rgb(255,0,0));
         //System.out.println(colors.colorsTab[0]);
+        if(counter>=100){
+            openResultWindow();
+        }
 
         if(generatedColorName==generatedColorValue){
-            if(isCorrect)points++;
+            if(isCorrect){points++;
+            counters.add(counter);}
             else openResultWindow();
         }else{
-            if(!isCorrect)points++;
+            if(!isCorrect){points++;
+            counters.add(counter);}
+
             else openResultWindow();
         }
         System.out.println("punkty" + points);
         System.out.println("counterro: " + counter);
-        counters.add(counter);
+
         newTask();
     }
 
@@ -102,16 +112,31 @@ public class GameActivity extends AppCompatActivity {
         counter = 0;
 
         final TextView timer = (TextView) findViewById(R.id.timer);
-        new CountDownTimer(10000, 100){
-            public void onTick(long millisUntilFinished){
-                timer.setText(String.valueOf(counter));
-                counter++;
-            }
+        if(gameEnded==false) {
+            new CountDownTimer(10000, 100) {
+                public void onTick(long millisUntilFinished) {
+                    timer.setText(String.valueOf(counter));
+                    if(counter<=100) {
+                        counter++;
+                        progressBar.setProgress(counter);
+                    }
 
-            public void onFinish(){
+                    if(counter>=100){
+                        gameEnded = true;
+                        System.out.println("game ended " + gameEnded);
+                        //checkAnswer(false);
+                    }
 
-            }
-        }.start();
+
+
+
+                }
+
+                public void onFinish() {
+
+                }
+            }.start();
+        }
         System.out.println("counter po: "+ counter);
     }
 
@@ -135,7 +160,7 @@ public class GameActivity extends AppCompatActivity {
         if(points>0)avg = sum/points;
         else avg=0;
 
-        System.out.println("suma: " + sum + " average: " + avg + " najszybsza odpowiedz: " + min + " najwolniejsza opowiedz: " + max);
+        //System.out.println("suma: " + sum + " average: " + avg + " najszybsza odpowiedz: " + min + " najwolniejsza opowiedz: " + max);
 
         Intent intent = new Intent(this, ResultActivity.class);
         intent.putExtra(CORRECT_ANSWERS_COUNT, points);

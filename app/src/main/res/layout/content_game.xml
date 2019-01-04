@@ -42,9 +42,9 @@
     <TextView
         android:id="@+id/colorName"
         android:layout_width="match_parent"
-        android:layout_height="98dp"
+        android:layout_height="45dp"
         android:layout_x="0dp"
-        android:layout_y="203dp"
+        android:layout_y="180dp"
         android:text="TextColor"
         android:textAlignment="center"
         android:textSize="24sp"
@@ -62,4 +62,14 @@
         android:textSize="18sp"
         tools:layout_editor_absoluteX="161dp"
         tools:layout_editor_absoluteY="321dp" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="189dp"
+        android:layout_height="44dp"
+        android:layout_x="100dp"
+        android:layout_y="234dp"
+        tools:layout_editor_absoluteX="130dp"
+        tools:layout_editor_absoluteY="251dp" />
 </AbsoluteLayout>

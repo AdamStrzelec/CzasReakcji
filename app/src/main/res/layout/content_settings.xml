@@ -13,11 +13,71 @@
         android:id="@+id/settingsTextView"
         android:layout_width="281dp"
         android:layout_height="59dp"
-        android:layout_x="52dp"
-        android:layout_y="51dp"
+        android:layout_x="33dp"
+        android:layout_y="28dp"
         android:text="Ustawienia"
         android:textSize="30dp"
         tools:layout_editor_absoluteX="106dp"
         tools:layout_editor_absoluteY="27dp" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="54dp"
+        android:layout_y="160dp"
+        android:id="@+id/radioGroup">
+
+        <RadioButton
+            android:id="@+id/radioButtonEasy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_x="54dp"
+            android:layout_y="131dp"
+            android:text="Poziom łatwy (10 zadań)"
+            android:checked="true"
+            tools:layout_editor_absoluteX="62dp"
+            tools:layout_editor_absoluteY="140dp" />
+
+        <RadioButton
+            android:id="@+id/radioButtonMedium"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_x="54dp"
+            android:layout_y="163dp"
+            android:text="Poziom średni (15 zadań)"
+            tools:layout_editor_absoluteX="48dp"
+            tools:layout_editor_absoluteY="183dp" />
+
+        <RadioButton
+            android:id="@+id/radioButtonHigh"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_x="54dp"
+            android:layout_y="192dp"
+            android:text="Poziom trudny (20 zadań)"
+            tools:layout_editor_absoluteX="54dp"
+            tools:layout_editor_absoluteY="213dp" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/button_apply"
+        android:layout_width="115dp"
+        android:layout_height="wrap_content"
+        android:layout_x="122dp"
+        android:layout_y="286dp"
+        android:text="Zatwierdź"
+        tools:layout_editor_absoluteX="76dp"
+        tools:layout_editor_absoluteY="266dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="258dp"
+        android:layout_height="46dp"
+        android:layout_x="56dp"
+        android:layout_y="100dp"
+        android:text="Wybierz poziom trudności"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="61dp"
+        tools:layout_editor_absoluteY="91dp" />
 
 </AbsoluteLayout>

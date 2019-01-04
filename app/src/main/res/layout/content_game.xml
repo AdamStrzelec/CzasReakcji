@@ -8,17 +8,6 @@
     tools:context="com.example.user.czasreakcji.GameActivity"
     tools:showIn="@layout/activity_game">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="334dp"
-        android:layout_height="54dp"
-        android:layout_x="28dp"
-        android:layout_y="85dp"
-        android:text="Naciśnij przycisk: prawda - fałsz w zależności, czy kolor jest poprawny"
-        android:textAlignment="center"
-        tools:layout_editor_absoluteX="75dp"
-        tools:layout_editor_absoluteY="181dp" />
-
     <Button
         android:id="@+id/correctButton"
         android:layout_width="191dp"
@@ -72,4 +61,27 @@
         android:layout_y="234dp"
         tools:layout_editor_absoluteX="130dp"
         tools:layout_editor_absoluteY="251dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="334dp"
+        android:layout_height="54dp"
+        android:layout_x="28dp"
+        android:layout_y="45dp"
+        android:text="Naciśnij przycisk: prawda - fałsz w zależności, czy kolor jest poprawny"
+        android:textAlignment="center"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="103dp" />
+
+    <TextView
+        android:id="@+id/level"
+        android:layout_width="332dp"
+        android:layout_height="43dp"
+        android:layout_x="33dp"
+        android:layout_y="116dp"
+        android:text="Poziom łatwy"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="89dp"
+        tools:layout_editor_absoluteY="125dp" />
 </AbsoluteLayout>

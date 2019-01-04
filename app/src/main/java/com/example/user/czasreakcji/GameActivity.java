@@ -19,6 +19,7 @@ public class GameActivity extends AppCompatActivity {
     private Button correctButon;
     private Button incorrectButon;
     private TextView colorName;
+    private TextView level;
     private ProgressBar progressBar;
     private Colors colors;
     private Random random;
@@ -63,6 +64,7 @@ public class GameActivity extends AppCompatActivity {
         progressBar.setMax(100);
 
         colorName = (TextView) findViewById(R.id.colorName);
+        level = (TextView) findViewById(R.id.level);
 
         colors = new Colors();
 
@@ -87,12 +89,22 @@ public class GameActivity extends AppCompatActivity {
         }
 
         if(generatedColorName==generatedColorValue){
-            if(isCorrect){points++;
-            counters.add(counter);}
+            if(isCorrect){
+                points++;
+                counters.add(counter);
+                if(points==Levels.CURRENT_LEVEL){
+                    openResultWindow();
+                }
+            }
             else openResultWindow();
         }else{
-            if(!isCorrect){points++;
-            counters.add(counter);}
+            if(!isCorrect){
+                points++;
+                counters.add(counter);
+                if(points==Levels.CURRENT_LEVEL){
+                    openResultWindow();
+                }
+            }
 
             else openResultWindow();
         }
@@ -103,6 +115,15 @@ public class GameActivity extends AppCompatActivity {
     }
 
     public void newTask(){
+        if(Levels.CURRENT_LEVEL==10){
+            level.setText("Poziom łatwy");
+        }
+        else if(Levels.CURRENT_LEVEL==15){
+            level.setText("Poziom średni");
+        }
+        else{
+            level.setText("Poziom trudny");
+        }
         generatedColorName = random.nextInt(colors.colorsTab.length);
         generatedColorValue = random.nextInt(colors.colorsTab.length);
         colorName.setText(colors.colorsTab[generatedColorName].getColorName());

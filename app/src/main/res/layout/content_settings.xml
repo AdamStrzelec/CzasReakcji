@@ -9,6 +9,28 @@
     tools:showIn="@layout/activity_settings"
     android:background="#afd8d8">
 
+    <Button
+        android:id="@+id/button_start_music"
+        android:layout_width="115dp"
+        android:layout_height="wrap_content"
+        android:layout_x="122dp"
+        android:layout_y="335dp"
+        android:onClick="startService"
+        android:text="MUZYKA START"
+        tools:layout_editor_absoluteX="76dp"
+        tools:layout_editor_absoluteY="266dp" />
+
+    <Button
+        android:id="@+id/button_stop_music"
+        android:layout_width="115dp"
+        android:layout_height="wrap_content"
+        android:layout_x="124dp"
+        android:layout_y="394dp"
+        android:onClick="stopService"
+        android:text="MUZYKA STOP"
+        tools:layout_editor_absoluteX="76dp"
+        tools:layout_editor_absoluteY="266dp" />
+
     <TextView
         android:id="@+id/settingsTextView"
         android:layout_width="281dp"

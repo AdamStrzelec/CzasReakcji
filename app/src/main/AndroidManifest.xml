@@ -36,6 +36,10 @@
             android:parentActivityName=".GameActivity"
             android:label="@string/title_activity_reslt"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+
+        <service
+            android:name=".MusicActivity1"
+            android:enabled="true"/>
     </application>
 
 </manifest>

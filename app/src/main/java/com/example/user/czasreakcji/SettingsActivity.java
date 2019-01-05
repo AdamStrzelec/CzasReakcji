@@ -1,5 +1,6 @@
 package com.example.user.czasreakcji;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 public class SettingsActivity extends AppCompatActivity {
 
@@ -42,6 +44,16 @@ public class SettingsActivity extends AppCompatActivity {
                 System.out.println("poziom: " + Levels.CURRENT_LEVEL);
             }
         });
+    }
+
+    public void
+    startService(View view) {
+        startService(new Intent(getBaseContext(), MusicActivity1.class));
+        //getBaseContext()
+        Toast.makeText(this, "Bensound - Energy", Toast.LENGTH_LONG).show();
+    }
+    public void
+    stopService(View view) {stopService(new Intent(getBaseContext(), MusicActivity1.class));
     }
 
 }

@@ -2,6 +2,7 @@ package com.example.user.czasreakcji;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
@@ -36,6 +37,7 @@ public class GameActivity extends AppCompatActivity {
     public static final String SLOWEST_ANSWER = "com.example.user.czasreakcji.SLOWEST_ANSWER";
     public static final String FASTEST_ANSWER = "com.example.user.czasreakcji.FASTEST_ANSWER";
 
+    public MediaPlayer correctMP = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,8 +74,6 @@ public class GameActivity extends AppCompatActivity {
 
         points = 0;
 
-
-
         newTask();
     }
 
@@ -90,6 +90,7 @@ public class GameActivity extends AppCompatActivity {
 
         if(generatedColorName==generatedColorValue){
             if(isCorrect){
+                this.playCorrectSound();
                 points++;
                 counters.add(counter);
                 if(points==Levels.CURRENT_LEVEL){
@@ -99,6 +100,7 @@ public class GameActivity extends AppCompatActivity {
             else openResultWindow();
         }else{
             if(!isCorrect){
+                this.playCorrectSound();
                 points++;
                 counters.add(counter);
                 if(points==Levels.CURRENT_LEVEL){
@@ -161,6 +163,16 @@ public class GameActivity extends AppCompatActivity {
         System.out.println("counter po: "+ counter);
     }
 
+    public void playCorrectSound() {
+        this.correctMP = MediaPlayer.create(this, R.raw.correct);
+        this.correctMP.start();
+        this.correctMP.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            public void onCompletion(MediaPlayer mp) {
+                mp.release();
+            };
+        });
+    }
+
     public void openResultWindow(){
 
         int sum = 0;
@@ -189,6 +201,7 @@ public class GameActivity extends AppCompatActivity {
         intent.putExtra(SLOWEST_ANSWER, max);
         intent.putExtra(FASTEST_ANSWER, min);
         startActivity(intent);
+        finish();
     }
 
 }

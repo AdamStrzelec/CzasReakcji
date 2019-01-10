@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.user.czasreakcji.GameActivity"
+    tools:showIn="@layout/activity_game">
+
+    <Button
+        android:id="@+id/correctButton"
+        android:layout_width="191dp"
+        android:layout_height="wrap_content"
+        android:layout_x="0dp"
+        android:layout_y="369dp"
+        android:text="prawda"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="350dp" />
+
+    <Button
+        android:id="@+id/incorrectButton"
+        android:layout_width="191dp"
+        android:layout_height="wrap_content"
+        android:layout_x="203dp"
+        android:layout_y="370dp"
+        android:text="fałsz"
+        tools:layout_editor_absoluteX="215dp"
+        tools:layout_editor_absoluteY="370dp" />
+
+    <TextView
+        android:id="@+id/colorName"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_x="0dp"
+        android:layout_y="180dp"
+        android:text="TextColor"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="90dp"
+        tools:layout_editor_absoluteY="205dp" />
+
+    <TextView
+        android:id="@+id/timer"
+        android:layout_width="match_parent"
+        android:layout_height="41dp"
+        android:layout_x="0dp"
+        android:layout_y="306dp"
+        android:text="0"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        tools:layout_editor_absoluteX="161dp"
+        tools:layout_editor_absoluteY="321dp" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="189dp"
+        android:layout_height="44dp"
+        android:layout_x="100dp"
+        android:layout_y="234dp"
+        tools:layout_editor_absoluteX="130dp"
+        tools:layout_editor_absoluteY="251dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="334dp"
+        android:layout_height="54dp"
+        android:layout_x="28dp"
+        android:layout_y="45dp"
+        android:text="Naciśnij przycisk: prawda - fałsz w zależności, czy kolor jest poprawny"
+        android:textAlignment="center"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="103dp" />
+
+    <TextView
+        android:id="@+id/level"
+        android:layout_width="332dp"
+        android:layout_height="43dp"
+        android:layout_x="33dp"
+        android:layout_y="116dp"
+        android:text="Poziom łatwy"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="89dp"
+        tools:layout_editor_absoluteY="125dp" />
+</AbsoluteLayout>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.user.czasreakcji.ResultActivity"
+    tools:showIn="@layout/activity_reslt">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="22dp"
+        android:layout_y="0dp"
+        android:text="Ilość poprawnych odpowiedzi:"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="35dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <TextView
+        android:id="@+id/correctCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="172dp"
+        android:layout_y="35dp"
+        android:text="0"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="185dp"
+        tools:layout_editor_absoluteY="48dp" />
+
+    <TextView
+        android:id="@+id/average"
+        android:layout_width="308dp"
+        android:layout_height="38dp"
+        android:layout_x="29dp"
+        android:layout_y="109dp"
+        android:text="Średni czas odpowiedzi:"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="167dp"
+        tools:layout_editor_absoluteY="99dp" />
+
+    <TextView
+        android:id="@+id/averageTime"
+        android:layout_width="304dp"
+        android:layout_height="41dp"
+        android:layout_x="28dp"
+        android:layout_y="153dp"
+        android:text="0"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="171dp"
+        tools:layout_editor_absoluteY="151dp" />
+
+    <TextView
+        android:id="@+id/slowest"
+        android:layout_width="308dp"
+        android:layout_height="64dp"
+        android:layout_x="28dp"
+        android:layout_y="232dp"
+        android:text="Najwolniejszy czas odpowiedzi:"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="52dp"
+        tools:layout_editor_absoluteY="244dp" />
+
+    <TextView
+        android:id="@+id/slowestTime"
+        android:layout_width="304dp"
+        android:layout_height="43dp"
+        android:layout_x="28dp"
+        android:layout_y="299dp"
+        android:text="0"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="39dp"
+        tools:layout_editor_absoluteY="377dp" />
+
+    <TextView
+        android:id="@+id/fastest"
+        android:layout_width="300dp"
+        android:layout_height="62dp"
+        android:layout_x="28dp"
+        android:layout_y="380dp"
+        android:text="Najszybszy czas odpowiedzi:"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="47dp"
+        tools:layout_editor_absoluteY="387dp" />
+
+    <TextView
+        android:id="@+id/fastestTime"
+        android:layout_width="293dp"
+        android:layout_height="51dp"
+        android:layout_x="30dp"
+        android:layout_y="447dp"
+        android:text="0"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="152dp"
+        tools:layout_editor_absoluteY="459dp" />
+</AbsoluteLayout>

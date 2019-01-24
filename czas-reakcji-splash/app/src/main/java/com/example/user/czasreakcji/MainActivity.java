@@ -23,12 +23,14 @@ public class MainActivity extends AppCompatActivity {
     private Button statsButton;
     private Button settingsButton;
 
+    public DatabaseHelper myDb;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
 
-
+        //myDb = new DatabaseHelper(this);
 
         setContentView(R.layout.activity_main);
 

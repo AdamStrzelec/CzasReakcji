@@ -1,16 +1,20 @@
 package com.example.user.czasreakcji;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -29,6 +33,7 @@ public class GameActivity extends AppCompatActivity {
     private int points;
     private boolean gameEnded = false;
     public int counter = 0;
+    DatabaseHelper myDb;
 
     public List<Integer> counters = new ArrayList<>();
 
@@ -39,12 +44,33 @@ public class GameActivity extends AppCompatActivity {
 
     public MediaPlayer correctMP = null;
 
+    public void showMessage(String title, String message){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setCancelable(true);
+        builder.setTitle(title);
+        builder.setMessage(message);
+        builder.show();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
         //timer = (TextView) findViewById(R.id.timer);
         //final TextView timer = (TextView) findViewById(R.id.timer);
+        myDb = new DatabaseHelper(this);
+
+        /*
+        boolean isInserted = myDb.insertData("75", "Easy level");
+        if(isInserted==true){
+            Toast.makeText(GameActivity.this, "Data Inserted", Toast.LENGTH_LONG).show();
+        }else{
+            Toast.makeText(GameActivity.this, "Data not Inserted", Toast.LENGTH_LONG).show();
+        }
+        */
+
+
+
         correctButon = (Button) findViewById(R.id.correctButton);
         correctButon.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,6 +80,9 @@ public class GameActivity extends AppCompatActivity {
 
             }
         });
+
+
+
 
         incorrectButon = (Button) findViewById(R.id.incorrectButton);
         incorrectButon.setOnClickListener(new View.OnClickListener() {
@@ -173,7 +202,28 @@ public class GameActivity extends AppCompatActivity {
         });
     }
 
+
     public void openResultWindow(){
+        /*
+        Cursor res = myDb.getAllData();
+        if(res.getCount() == 0){
+            //message
+            showMessage("error", "nothoing found");
+            return;
+        }
+
+        StringBuffer buffer = new StringBuffer();
+        while (res.moveToNext()){
+            buffer.append("Id: "+res.getString(0)+"\n");
+            buffer.append("Time: "+res.getString(1)+"\n");
+            buffer.append("Level: "+res.getString(2)+"\n");
+            //ResultsRepository.RESULTS.add(res.getShort(0) + " " + res.getString(1) + " " + res.getString(2));
+        }
+
+        showMessage("data: ", buffer.toString());
+        */
+
+
 
         int sum = 0;
         int avg = 0;
@@ -190,10 +240,13 @@ public class GameActivity extends AppCompatActivity {
             if(i>max)max=i;
         }
 
+
+
         if(points>0)avg = sum/points;
         else avg=0;
 
         //System.out.println("suma: " + sum + " average: " + avg + " najszybsza odpowiedz: " + min + " najwolniejsza opowiedz: " + max);
+
 
         Intent intent = new Intent(this, ResultActivity.class);
         intent.putExtra(CORRECT_ANSWERS_COUNT, points);
